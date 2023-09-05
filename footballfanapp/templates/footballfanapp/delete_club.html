@@ -1,0 +1,11 @@
+{%extends 'main.html'%}
+{%block content%}
+
+<form action="" method="POST">
+    {%csrf_token%}
+    <h1>Are you sure you want to delete "{{club.name}}"</h1>
+    <a href="{%url 'clubs'%}">Go Back</a>
+    <input type="submit" value="Confirm">
+</form>
+
+{%endblock content%}

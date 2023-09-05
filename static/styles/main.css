@@ -1,0 +1,25 @@
+.NavHeading {
+    text-align: center;
+}
+
+.ClubHeading {
+    text-align: center;
+    color: blue;
+}
+
+.Footer {
+    text-align: center;
+}
+
+.ClubLogo {
+    height: 8rem;
+    width: auto;
+    align-items: center;
+}
+
+.ClubLogoHolder {
+    text-align: center;
+}
+.ClubsDetailsHeading{
+    color: red;
+}

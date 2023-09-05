@@ -1,0 +1,10 @@
+{%extends 'main.html'%}
+{%block content%}
+<h1 class="ClubHeading">{{club.name}}({{club.abb}})</h1>
+<div class="ClubLogoHolder"><img class="ClubLogo" src="{{club.logo.url}}" alt="Club Logo">
+    <h2>{{club.country}}</h2>
+    <h2>Estd. :{{club.estd}}</h2>
+    <p>{{club.description}}</p>
+</div>
+<a href="{%url 'update-club' club.id%}">Edit Details</a>
+{%endblock content%}
