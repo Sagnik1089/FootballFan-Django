@@ -4,7 +4,14 @@
         <img class="site_logo" src="{% static 'images/site_logo.png' %}">
         <h1 class="site_title">Football-Fan: A Django Project</h1>
     </div>
-    <a href="{% url 'create-club' %}" class="new_club_link_button">
-        Add New Club
-    </a>
+    <div class="nav_menu_buttons">
+        <a href="{% url 'clubs' %}" class="nav_button">
+            Home
+        </a>
+        <a href="{% url 'create-club' %}" class="nav_button">
+            Add New Club
+        </a>
+    </div>
+
 </div>
+<hr />

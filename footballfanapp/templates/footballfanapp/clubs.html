@@ -1,14 +1,15 @@
 {% extends 'main.html' %}
 {% block content %}
-<h1>Clubs and Details</h1>
+<h1 class="clubs_page_title">
+    Clubs and Details
+</h1>
 <table class="ClubTable">
     <tr class="header-row">
         <th>Insignia</th>
         <th>Club Name</th>
-        <th>Abb</th>
+        <th>Abbreviation</th>
         <th>Country</th>
         <th>Established</th>
-        <th>Edit</th>
         <th>Delete</th>
     </tr>
     {% for club in clubs %}
@@ -19,7 +20,6 @@
         <td>{{ club.abb }}</td>
         <td>{{ club.country }}</td>
         <td>{{ club.estd }}</td>
-        <td><a href="{% url 'update-club' club.id %}">Edit</a></td>
         <td><a href="{% url 'delete-club' club.id %}">Delete</a></td>
     </tr>
     {% endfor %}
