@@ -10,7 +10,6 @@
         <th>Abbreviation</th>
         <th>Country</th>
         <th>Established</th>
-        <th>Delete</th>
     </tr>
     {% for club in clubs %}
     <tr>
@@ -20,7 +19,6 @@
         <td>{{ club.abb }}</td>
         <td>{{ club.country }}</td>
         <td>{{ club.estd }}</td>
-        <td><a href="{% url 'delete-club' club.id %}">Delete</a></td>
     </tr>
     {% endfor %}
 </table>

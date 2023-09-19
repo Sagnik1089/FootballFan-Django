@@ -1,5 +1,10 @@
 .page_body {
     background-color: #F8F0E5;
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    flex: 1; /* Allows the wrapper to grow and push the footer to the bottom */
 }
 
 /* NavBar Section */
@@ -66,6 +71,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 3vw;
 }
 
 .created_by {
@@ -138,25 +144,98 @@
 
 
 /* Club page */
-.club_page{
+.club_page {
     text-align: center;
 }
+
 .ClubHeading {
     color: #0F2C59;
 }
 
 .ClubLogo {
-    height: 15rem;
+    height: 18rem;
     width: auto;
 }
-.club_details{
+
+.club_details {
     font-size: 1.5vw;
     padding-left: 5vw;
     padding-right: 5vw;
 }
+
 .club_edit_button {
     display: flex;
     justify-content: space-around;
 }
 
-/*  */
+/* End of Club Page */
+
+/* Form */
+.add_update {
+    color: #0F2C59;
+    text-align: center;
+  }
+  
+  .formPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; 
+  }
+  
+  .content-box {
+    background-color: #EADBC8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 80vw;
+    max-width: 1200px;
+    padding-right: 1.5rem;
+  }
+  
+  .formWrapper {
+    padding: 20px;
+  }
+  
+  .form__field {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    font-size: 1.3vw;
+  }
+  
+  /* Make form fields use the whole width */
+  input[type="text"],
+  input[type="text"],
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style form buttons */
+  .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Center the submit button */
+  .form__field:last-child {
+    display: flex;
+    justify-content: center;
+  }
+  
+/* End of Form */
