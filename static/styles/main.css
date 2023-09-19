@@ -1,6 +1,7 @@
-.page_body{
+.page_body {
     background-color: #F8F0E5;
 }
+
 /* NavBar Section */
 .NavBarOut {
     background-color: #DAC0A3;
@@ -27,15 +28,17 @@
 .site_title {
     color: #0F2C59;
 }
-.nav_menu_buttons{
+
+.nav_menu_buttons {
     display: flex;
     justify-content: space-around;
     width: 25vw;
 }
+
 .nav_button {
     text-align: center;
     /* background-color: #0e81ce; */
-    background-color:#0F2C59;
+    background-color: #0F2C59;
     border-radius: 0.5vw;
     border: none;
     cursor: pointer;
@@ -50,9 +53,11 @@
     color: white;
     text-decoration: none !important;
 }
+
 .nav_button:hover {
     background-color: #4f6991;
 }
+
 /* Footer */
 .Footer {
     background-color: #DAC0A3;
@@ -62,19 +67,22 @@
     justify-content: space-between;
     align-items: center;
 }
-.created_by{
-    font-size:1.5vw;
+
+.created_by {
+    font-size: 1.5vw;
     margin-right: 5vw;
 }
-.date_time{
-    font-size:1.5vw;
+
+.date_time {
+    font-size: 1.5vw;
     margin-left: 5vw;
 }
+
 /* End of Footer */
 /* End of Navbar Section */
 
 /* Clubs Page */
-.clubs_page_title{
+.clubs_page_title {
     color: #0F2C59;
     text-align: center;
     font-size: 2.5vw;
@@ -83,6 +91,7 @@
 .header-row {
     background-color: #DAC0A3;
 }
+
 .ClubTable {
     width: 90%;
     border-collapse: collapse;
@@ -102,47 +111,52 @@
     color: black;
     font-size: 1.4rem;
 }
+
 .TableClubLogo {
     height: 6rem;
     width: auto;
 }
-.ClubTable td{
+
+.ClubTable td {
     font-size: 1.4rem;
 }
-.ClubTable td a{
+
+.ClubTable td a {
     text-decoration: none !important;
     color: black;
 }
-.ClubTable td a:hover{
+
+.ClubTable td a:hover {
     color: blue;
 }
+
 .ClubTable tr:hover {
     background-color: #EADBC8;
 }
+
 /* End of Clubs Page */
 
 
-
-
-
-
-
-.ClubHeading {
+/* Club page */
+.club_page{
     text-align: center;
-    color: blue;
+}
+.ClubHeading {
+    color: #0F2C59;
 }
 
 .ClubLogo {
-    height: 8rem;
+    height: 15rem;
     width: auto;
-    align-items: center;
+}
+.club_details{
+    font-size: 1.5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+.club_edit_button {
+    display: flex;
+    justify-content: space-around;
 }
 
-.ClubLogoHolder {
-    text-align: center;
-}
-
-.ClubsDetailsHeading {
-    color: red;
-}
-
+/*  */
