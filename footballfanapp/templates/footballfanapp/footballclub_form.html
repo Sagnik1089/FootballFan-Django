@@ -1,10 +1,25 @@
-{% extends 'main.html'%}
-{%block content%}
+{% extends 'main.html' %}
 
-<h1 style="text-align: center;">Add Football Club</h1>
-<form action='' method="POST" enctype="multipart/form-data">
-    {%csrf_token%}
-    {{form.as_p}}
-    <input type="submit">
-</form>
-{%endblock content%}
+{% block content %}
+  <h1 class="add_update">Add/Update Football Club</h1>
+
+  <main class="formPage my-xl">
+    <div class="content-box">
+      <div class="formWrapper">
+        <br>
+        <form class="form" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {% for field in form %}
+            <div class="form__field">
+              <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+              {{ field }}
+            </div>
+          {% endfor %}
+          <div class="form__field">
+            <input class="btn btn--sub btn--lg my-md" type="submit" value="Submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock content %}

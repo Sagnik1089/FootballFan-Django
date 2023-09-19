@@ -1,10 +1,23 @@
 {%extends 'main.html'%}
 {%block content%}
-<h1 class="ClubHeading">{{club.name}}({{club.abb}})</h1>
-<div class="ClubLogoHolder"><img class="ClubLogo" src="{{club.logo.url}}" alt="Club Logo">
-    <h2>{{club.country}}</h2>
-    <h2>Estd. :{{club.estd}}</h2>
-    <p>{{club.description}}</p>
+<div class="club_page">
+    <h1 class="ClubHeading">{{club.name}} ({{club.abb}})</h1>
+    <div>
+        <img class="ClubLogo" src="{{club.logo.url}}" alt="Club Logo">
+    </div>
+    <h1><i>{{club.slogan}}</i></h1>
+    <h2>League: {{club.league}} ({{club.country}})</h2>
+    <h2>Established: {{club.estd}}</h2>
+    <div class="club_details">
+        <p>{{club.description}}</p>
+    </div>
+    <div class="club_edit_button">
+        <a href="{%url 'update-club' club.id%}" class="nav_button">
+            Edit {{club.name}}'s Details
+        </a>
+        <a href="{% url 'delete-club' club.id %}" class="nav_button">
+            Delete {{club.name}}'s Details
+        </a>
+    </div>
 </div>
-<a href="{%url 'update-club' club.id%}">Edit Details</a>
 {%endblock content%}

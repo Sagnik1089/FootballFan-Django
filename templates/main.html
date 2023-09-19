@@ -10,14 +10,14 @@
     <link rel='stylesheet' type='text/css' media='screen' href='{% static "styles/main.css" %}'>
 </head>
 
-<body>
+<body class="page_body">
     {% include 'navbar.html' %}
 
     {% block content %}
 
     {% endblock content %}
-    <hr>
-    <h3 class="Footer">Created by Sagnik Chakraborty</h3>
+
+    {% include 'footer.html' %}
 </body>
 
 </html>

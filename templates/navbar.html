@@ -1,2 +1,15 @@
-<h1 class="NavHeading"><a href="{% url 'clubs' %}">FootballFan: Django</a></h1>
-<hr>
+{% load static %}
+<div class="NavBarOut">
+    <div class="logo_title">
+        <img class="site_logo" src="{% static 'images/site_logo.png' %}">
+        <h1 class="site_title">Football-Fan: A Django Project</h1>
+    </div>
+    <div class="nav_menu_buttons">
+        <a href="{% url 'clubs' %}" class="nav_button">
+            Home
+        </a>
+        <a href="{% url 'create-club' %}" class="nav_button">
+            Add New Club
+        </a>
+    </div>
+</div>

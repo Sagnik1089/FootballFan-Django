@@ -1,25 +1,242 @@
-.NavHeading {
+.page_body {
+    background-color: #F8F0E5;
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    flex: 1; /* Allows the wrapper to grow and push the footer to the bottom */
+}
+
+/* NavBar Section */
+.NavBarOut {
+    background-color: #DAC0A3;
+    height: 7rem;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0rem;
+}
+
+.logo_title {
+    display: inline-flex;
+    align-items: center;
+    padding-left: 1vw;
+}
+
+.site_logo {
+    max-height: 4vw;
+    margin-right: auto;
+    padding-right: 1vw;
+}
+
+.site_title {
+    color: #0F2C59;
+}
+
+.nav_menu_buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 25vw;
+}
+
+.nav_button {
+    text-align: center;
+    /* background-color: #0e81ce; */
+    background-color: #0F2C59;
+    border-radius: 0.5vw;
+    border: none;
+    cursor: pointer;
+    min-width: 8vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    height: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    color: white;
+    text-decoration: none !important;
+}
+
+.nav_button:hover {
+    background-color: #4f6991;
+}
+
+/* Footer */
+.Footer {
+    background-color: #DAC0A3;
+    height: 5rem;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3vw;
+    color: #0F2C59;
+}
+
+.created_by {
+    font-size: 1.5vw;
+    margin-right: 5vw;
+}
+
+.date_time {
+    font-size: 1.5vw;
+    margin-left: 5vw;
+}
+
+/* End of Footer */
+/* End of Navbar Section */
+
+/* Clubs Page */
+.clubs_page_title {
+    color: #0F2C59;
+    text-align: center;
+    font-size: 2.5vw;
+}
+
+.header-row {
+    background-color: #DAC0A3;
+}
+
+.ClubTable {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+.ClubTable th,
+.ClubTable td {
+    border: 1px solid black;
+    padding: 6px;
+    text-align: center;
+}
+
+.ClubTable th {
+    font-weight: bold;
+    background-color: #DAC0A3;
+    color: black;
+    font-size: 1.4rem;
+}
+
+.TableClubLogo {
+    height: 6rem;
+    width: auto;
+}
+
+.ClubTable td {
+    font-size: 1.4rem;
+}
+
+.ClubTable td a {
+    text-decoration: none !important;
+    color: black;
+}
+
+.ClubTable td a:hover {
+    color: blue;
+}
+
+.ClubTable tr:hover {
+    background-color: #EADBC8;
+}
+
+/* End of Clubs Page */
+
+
+/* Club page */
+.club_page {
     text-align: center;
 }
 
 .ClubHeading {
-    text-align: center;
-    color: blue;
-}
-
-.Footer {
-    text-align: center;
+    color: #0F2C59;
 }
 
 .ClubLogo {
-    height: 8rem;
+    height: 18rem;
     width: auto;
-    align-items: center;
 }
 
-.ClubLogoHolder {
+.club_details {
+    font-size: 1.5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.club_edit_button {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* End of Club Page */
+
+/* Form */
+.add_update {
+    color: #0F2C59;
     text-align: center;
-}
-.ClubsDetailsHeading{
-    color: red;
-}
+  }
+  
+  .formPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; 
+  }
+  
+  .content-box {
+    background-color: #EADBC8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 80vw;
+    max-width: 1200px;
+    padding-right: 1.5rem;
+  }
+  
+  .formWrapper {
+    padding: 20px;
+  }
+  
+  .form__field {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    font-size: 1.3vw;
+  }
+  
+  /* Make form fields use the whole width */
+  input[type="text"],
+  input[type="text"],
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style form buttons */
+  .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Center the submit button */
+  .form__field:last-child {
+    display: flex;
+    justify-content: center;
+  }
+  
+/* End of Form */

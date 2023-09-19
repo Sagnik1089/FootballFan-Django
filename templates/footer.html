@@ -1,0 +1,21 @@
+<head>
+    <title>Current Time and Date</title>
+    <script>
+        function displayTimeAndDate() {
+            const now = new Date();
+            const dateTimeString = now.toLocaleString();
+            document.getElementById("datetime").innerHTML = dateTimeString;
+        }
+        window.onload = displayTimeAndDate;
+        setInterval(displayTimeAndDate, 1000);
+    </script>
+</head>
+
+<body>
+    <div class="Footer">
+        <div class="date_time" >
+            <p id="datetime"></p>
+        </div>
+        <div class="created_by">Created by <b>Sagnik Chakraborty</b></div>
+    </div>
+</body>

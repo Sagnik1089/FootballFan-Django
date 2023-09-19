@@ -1,61 +1,15 @@
 {% extends 'main.html' %}
 {% block content %}
-<style>
-    .ClubTable {
-        width: 80%;
-        border-collapse: collapse;
-        margin: 20px auto;
-    }
-
-    .ClubTable th,
-    .ClubTable td {
-        border: 1px solid #ccc;
-        padding: 8px;
-        text-align: center;
-    }
-
-    .ClubTable th {
-        font-weight: bold;
-        background-color: #f2f2f2;
-        color: black;
-    }
-
-    .header-row {
-        background-color: #333;
-        color: white;
-    }
-
-    .ClubTable tr:hover {
-        background-color: #f5f5f5;
-    }
-
-    h1 {
-        color: blue;
-        text-align: center;
-    }
-
-    a.new-club-link {
-        display: block;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .TableClubLogo {
-        height: 5rem;
-        width: auto;
-    }
-</style>
-
-<h1>Clubs and Details</h1>
+<h1 class="clubs_page_title">
+    Clubs and Details
+</h1>
 <table class="ClubTable">
     <tr class="header-row">
         <th>Insignia</th>
         <th>Club Name</th>
-        <th>Abb</th>
+        <th>Abbreviation</th>
         <th>Country</th>
         <th>Established</th>
-        <th>Edit</th>
-        <th>Delete</th>
     </tr>
     {% for club in clubs %}
     <tr>
@@ -65,13 +19,7 @@
         <td>{{ club.abb }}</td>
         <td>{{ club.country }}</td>
         <td>{{ club.estd }}</td>
-        <td><a href="{% url 'update-club' club.id %}">Edit</a></td>
-        <td><a href="{% url 'delete-club' club.id %}">Delete</a></td>
     </tr>
     {% endfor %}
 </table>
-<div style="display: flex; justify-content: space-around;">
-    <a href="{% url 'create-club' %}" class="new-club-link">Add a new Football Club</a>
-    <a href="{% url 'create-club' %}" class="new-club-link">Start a Tournament</a>
-</div>
 {% endblock content %}
