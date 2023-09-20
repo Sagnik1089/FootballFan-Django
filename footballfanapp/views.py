@@ -2,9 +2,6 @@ from django.shortcuts import render, redirect
 from .models import footballclub
 from .forms import FootballClubForm
 
-def name(request,name,age):
-    context={'name': name, 'age': int(age)}
-    return render(request, 'footballfanapp/name.html',context)
 
 def home(request):
     return render(request, 'footballfanapp/home.html')
