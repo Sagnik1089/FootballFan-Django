@@ -1,5 +1,8 @@
 {%extends 'main.html'%}
+{% load static %}
 {%block content%}
+{% load custom_filters %}
+
 <div class="club_page">
     <h1>{{club.name}} ({{club.abb}})</h1>
     <div>
@@ -15,6 +18,15 @@
         <p>{{club.description}}</p>
     </div>
     <hr>
+    {%if club.ucl_won > 0%}
+    <h1><u>UCL Trophy Cabinet</u></h1>
+    <div class="trophy_cabinet">
+        {% for i in club.ucl_won|custom_range %}
+        <img class="trophy" src="{% static 'images/ucl_trophy.png' %}">
+        {% endfor %}
+    </div>
+    <hr>
+    {% endif %}
     <h1><u>Current Manager</u></h1>
 
     <div class="manager_section">
