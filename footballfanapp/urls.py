@@ -3,8 +3,9 @@ from . import views
 
 
 urlpatterns = [
+    path('',views.home,name='home'),
     path('name/<str:name>/<str:age>/',views.name, name='name'),
-    path('',views.clubs, name='clubs'),
+    path('clubs',views.clubs, name='clubs'),
     path('club/<str:pk>/', views.club, name='club'),
     path('create-club/',views.createfootaballclub, name='create-club'),
     path('update-club/<str:pk>/', views.updatefootaballclub, name='update-club'), 

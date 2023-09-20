@@ -16,6 +16,7 @@
     justify-content: space-around;
     align-items: center;
     margin: 0rem;
+    margin-bottom: 3vw;
 }
 
 .logo_title {
@@ -37,7 +38,7 @@
 .nav_menu_buttons {
     display: flex;
     justify-content: space-around;
-    width: 25vw;
+    width: 40vw;
 }
 
 .nav_button {
@@ -87,6 +88,48 @@
 
 /* End of Footer */
 /* End of Navbar Section */
+
+/* Home Page */
+.home_page_section{
+    
+    display: flex;
+    justify-content: space-around;
+}
+
+.about_football-fan,
+.about_me{
+    width: 45vw;
+    height: auto;
+    background-color: #f3e4cf;
+    border-radius: 2vw;    
+}
+
+.about_football-fan:hover, .about_me:hover{
+    background-color: #EADBC8;;
+}
+.about_heading{
+    padding-left: 2vw;
+    color: #0F2C59;
+    font-size: 2vw;
+}
+.about_fig{
+    height: 12vw;
+    width: auto;
+    padding-left: 2vw;
+}
+
+.about_text{
+    color: #0F2C59;
+    padding:1.5vw;
+    text-align: justify;
+    font-size: 1.2vw;
+}
+
+
+
+/* End of Home Page */
+
+
 
 /* Clubs Page */
 .clubs_page_title {

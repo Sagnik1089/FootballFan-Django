@@ -6,6 +6,9 @@ def name(request,name,age):
     context={'name': name, 'age': int(age)}
     return render(request, 'footballfanapp/name.html',context)
 
+def home(request):
+    return render(request, 'footballfanapp/home.html')
+
 def clubs(request):
     clubObjs=footballclub.objects.all()
     return render(request, 'footballfanapp/clubs.html', {'clubs':clubObjs})
