@@ -190,6 +190,14 @@
     background-color: #EADBC8;
 }
 
+.wc_trophy_list{
+    width: 2vw;
+}
+.cup_list{
+    display: flex;
+    justify-content: space-around;
+}
+
 /* End of Clubs Page */
 
 
@@ -233,7 +241,7 @@
     padding-right: 3vw;
 }
 .copa_trophy{
-    width: 10vw;
+    width: 7vw;
     padding-left: 3vw;
     padding-right: 3vw;
     padding-bottom: 3vw;

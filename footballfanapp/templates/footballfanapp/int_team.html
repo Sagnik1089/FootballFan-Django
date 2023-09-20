@@ -16,19 +16,19 @@
     {% if int_team.wc_won|add:int_team.euro_won|add:int_team.copa_won > 0 %}
         <h1><u>Trophy Cabinet</u></h1>
         {% if int_team.wc_won > 0 %}
-            <h2>FIFA World Cup</h2> 
+            <h2><u>FIFA World Cup</u></h2> 
             {% for i in int_team.wc_won|custom_range %}
                 <img class="wc_trophy" src="{% static 'images/wc_trophy.png' %}">
             {% endfor %}
         {%endif%}
         {% if int_team.euro_won > 0 %}
-            <h2>UEFA Euro</h2> 
+            <h2><u>UEFA Euro</u></h2> 
             {% for i in int_team.euro_won|custom_range %}
                 <img class="euro_trophy" src="{% static 'images/euro_trophy.png' %}">
             {% endfor %}
         {%endif%}
         {% if int_team.copa_won > 0 %}
-            <h2>Copa America</h2> 
+            <h2><u>Copa America</u></h2> 
             {% for i in int_team.copa_won|custom_range %}
                 <img class="copa_trophy" src="{% static 'images/copa_trophy.png' %}">
             {% endfor %}

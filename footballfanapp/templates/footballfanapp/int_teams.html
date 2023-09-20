@@ -1,5 +1,8 @@
 {% extends 'main.html' %}
 {% block content %}
+{% load custom_filters %}
+{% load static %}
+
 <h1 class="clubs_page_title">
     International Teams and Details
 </h1>
@@ -8,6 +11,7 @@
         <th>Insignia</th>
         <th>Nation</th>
         <th>Abbreviation</th>
+        <th>FIFA World Cup Cabinet</th>
     </tr>
     {% for int_team in int_teams %}
     <tr>
@@ -15,6 +19,15 @@
         </td>
         <td><a href="{% url 'int_team' int_team.id %}">{{ int_team.name }}</a></td>
         <td>{{ int_team.abb }}</td>
+        <td>
+            {% if int_team.wc_won > 0 %}
+                <div class="cup_list">
+                    {% for i in int_team.wc_won|custom_range %}
+                    <img class="wc_trophy_list" src="{% static 'images/wc_trophy.png' %}">
+                {% endfor %}
+                </div>
+            {%endif%}
+        </td>
     </tr>
     {% endfor %}
 </table>
