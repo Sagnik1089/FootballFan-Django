@@ -5,8 +5,11 @@
         <h1 class="site_title">Football-Fan: A Django Project</h1>
     </div>
     <div class="nav_menu_buttons">
-        <a href="{% url 'clubs' %}" class="nav_button">
+        <a href="{% url 'home' %}" class="nav_button">
             Home
+        </a>
+        <a href="{% url 'clubs' %}" class="nav_button">
+            Clubs
         </a>
         <a href="{% url 'create-club' %}" class="nav_button">
             Add New Club

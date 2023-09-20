@@ -12,6 +12,9 @@
         <p>{{club.description}}</p>
     </div>
     <div class="club_edit_button">
+        <a href="{{club.official_site}}" class="nav_button">
+            Visit Official Site
+        </a>
         <a href="{%url 'update-club' club.id%}" class="nav_button">
             Edit {{club.name}}'s Details
         </a>
