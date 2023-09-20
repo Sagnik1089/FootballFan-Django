@@ -7,7 +7,7 @@ class footballclub(models.Model):
     abb=models.CharField(max_length=30, null=True)
     slogan=models.CharField(max_length=200, null=True)
     description=models.TextField(max_length=5000, null=True)
-    logo=models.ImageField(null=True, blank=True, default='default_logo.png', upload_to='logo/')
+    logo=models.ImageField(null=True, blank=True, default='default_logo.png', upload_to='club_logo/')
     estd=models.IntegerField(help_text='Year')
     country=models.CharField(max_length=30)
     league=models.CharField(max_length=30,null=True)
