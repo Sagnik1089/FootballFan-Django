@@ -16,6 +16,7 @@ class footballclub(models.Model):
     home_venue=models.CharField(max_length=100, null=True)
     current_manager=models.CharField(max_length=50,null=True)
     manager_pic=models.ImageField(null=True, blank=True, default='default_manager_pic.png', upload_to='managers/')
+    ucl_won=models.IntegerField(null=True)
 
     def __str__(self):
         return self.name
@@ -29,6 +30,10 @@ class internationalteam(models.Model):
     id=models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     current_manager=models.CharField(max_length=50,null=True)
     manager_pic=models.ImageField(null=True, blank=True, default='default_manager_pic.png', upload_to='managers/')
+    wc_won=models.IntegerField(null=True)
+    euro_won=models.IntegerField(null=True)
+    copa_won=models.IntegerField(null=True)
+
 
     def __str__(self):
         return self.name
