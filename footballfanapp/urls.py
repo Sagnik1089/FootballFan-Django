@@ -16,5 +16,4 @@ urlpatterns = [
     path('update-int-team/<str:pk>/', views.updateintteam, name='update-int-team'),
     path('delete-int-team/<str:pk>/',views.deleteintteam,name='delete-int-team'), 
     
-
 ]
