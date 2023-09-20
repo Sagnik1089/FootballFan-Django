@@ -3,8 +3,10 @@
     margin: 0;
     padding: 0;
 }
+
 .wrapper {
-    flex: 1; /* Allows the wrapper to grow and push the footer to the bottom */
+    flex: 1;
+    /* Allows the wrapper to grow and push the footer to the bottom */
 }
 
 /* NavBar Section */
@@ -90,37 +92,41 @@
 /* End of Navbar Section */
 
 /* Home Page */
-.home_page_section{
-    
+.home_page_section {
+
     display: flex;
     justify-content: space-around;
 }
 
 .about_football-fan,
-.about_me{
+.about_me {
     width: 45vw;
     height: auto;
     background-color: #f3e4cf;
-    border-radius: 2vw;    
+    border-radius: 2vw;
 }
 
-.about_football-fan:hover, .about_me:hover{
-    background-color: #EADBC8;;
+.about_football-fan:hover,
+.about_me:hover {
+    background-color: #EADBC8;
+    ;
 }
-.about_heading{
+
+.about_heading {
     padding-left: 2vw;
     color: #0F2C59;
     font-size: 2vw;
 }
-.about_fig{
+
+.about_fig {
     height: 12vw;
     width: auto;
     padding-left: 2vw;
 }
 
-.about_text{
+.about_text {
     color: #0F2C59;
-    padding:1.5vw;
+    padding: 1.5vw;
     text-align: justify;
     font-size: 1.2vw;
 }
@@ -205,16 +211,30 @@
     text-align: justify;
 }
 
-.manager_section{
+.manager_section {
     display: flex;
     justify-content: center;
-    padding-bottom: 3vw;
-    align-items: center;
 }
-.manager_pic{
+
+.manager_details {
+    display: flex;
+    justify-content: center;
+    padding: 3vw;
+    align-items: center;
+    background-color: #f3e4cf;
+    border-radius: 2vw;
+}
+
+.manager_details:hover {
+    background-color: #EADBC8;
+
+}
+
+.manager_pic {
     height: 15vw;
     width: auto;
     padding-right: 5vw;
+    border-radius: 2vw;
 }
 
 .club_edit_button {
@@ -229,16 +249,16 @@
 .add_update {
     color: #0F2C59;
     text-align: center;
-  }
-  
-  .formPage {
+}
+
+.formPage {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px; 
-  }
-  
-  .content-box {
+    padding: 20px;
+}
+
+.content-box {
     background-color: #EADBC8;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -246,51 +266,51 @@
     width: 80vw;
     max-width: 1200px;
     padding-right: 1.5rem;
-  }
-  
-  .formWrapper {
+}
+
+.formWrapper {
     padding: 20px;
-  }
-  
-  .form__field {
+}
+
+.form__field {
     margin-bottom: 20px;
-  }
-  
-  label {
+}
+
+label {
     font-weight: bold;
     font-size: 1.3vw;
-  }
-  
-  /* Make form fields use the whole width */
-  input[type="text"],
-  input[type="text"],
-  input[type="text"],
-  textarea {
+}
+
+/* Make form fields use the whole width */
+input[type="text"],
+input[type="text"],
+input[type="text"],
+textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  /* Style form buttons */
-  .btn {
+}
+
+/* Style form buttons */
+.btn {
     background-color: #007bff;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .btn:hover {
+}
+
+.btn:hover {
     background-color: #0056b3;
-  }
-  
-  /* Center the submit button */
-  .form__field:last-child {
+}
+
+/* Center the submit button */
+.form__field:last-child {
     display: flex;
     justify-content: center;
-  }
-  
+}
+
 /* End of Form */

@@ -15,10 +15,13 @@
         <p>{{club.description}}</p>
     </div>
     <hr>
-    <h1>Current Manager</h1>
+    <h1><u>Current Manager</u></h1>
+
     <div class="manager_section">
-        <img class="manager_pic" src="{{club.manager_pic.url}}" alt="Club Manager">
-        <h2>{{club.current_manager}}</h2>
+        <div class="manager_details">
+            <img class="manager_pic" src="{{club.manager_pic.url}}" alt="Club Manager">
+            <h2>{{club.current_manager}}</h2>
+        </div>
     </div>
     <hr>
     <div class="club_edit_button">
