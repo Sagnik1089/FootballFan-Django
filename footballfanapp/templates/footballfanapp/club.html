@@ -12,7 +12,12 @@
     <hr>
     <h2>League: {{club.league}} ({{club.country}})</h2>
     <h2>Established: {{club.estd}}</h2>
-    <h2>Home Venue: {{club.home_venue}}</h2>
+    <hr>
+    <h1><u>Home Venue</u></h1>
+    <div class="home">
+        <h2>{{club.home_venue}}</h2>
+        <img class="club_home" src="{{club.venue_pic.url}}" alt="Club Home">
+    </div>
     <hr>
     <div class="club_details">
         <p>{{club.description}}</p>

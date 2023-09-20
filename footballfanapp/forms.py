@@ -4,7 +4,7 @@ from .models import footballclub, internationalteam
 class FootballClubForm(ModelForm):
     class Meta:
         model = footballclub
-        fields = ['name','logo','official_site','home_venue','slogan','estd','country','league','abb','current_manager','manager_pic','ucl_won','description']
+        fields = ['name','logo','official_site','home_venue','venue_pic','slogan','estd','country','league','abb','current_manager','manager_pic','ucl_won','description']
 
 class InternationalForm(ModelForm):
     class Meta:
