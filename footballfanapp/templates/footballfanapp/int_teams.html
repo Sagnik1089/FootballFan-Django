@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1 class="clubs_page_title">
+    International Teams and Details
+</h1>
+<table class="ClubTable">
+    <tr class="header-row">
+        <th>Insignia</th>
+        <th>Nation</th>
+        <th>Abbreviation</th>
+    </tr>
+    {% for int_team in int_teams %}
+    <tr>
+        <td><a href="{% url 'int_team' int_team.id %}"><img class="TableClubLogo" src="{{int_team.logo.url}}" alt="Team Logo"></a>
+        </td>
+        <td><a href="{% url 'int_team' int_team.id %}">{{ int_team.name }}</a></td>
+        <td>{{ int_team.abb }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<div style=" display: flex; justify-content: center;">
+    <a href="{% url 'create-int-team' %}" class="nav_button">
+        Add New International Team
+    </a>
+</div>
+
+{% endblock content %}
