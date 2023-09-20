@@ -211,6 +211,16 @@
     height: 18rem;
     width: auto;
 }
+.flag{
+    height: 15rem;
+    width: auto;
+}
+
+.flag_logo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
 .club_details {
     font-size: 1.5vw;
@@ -230,18 +240,18 @@
 }
 
 .wc_trophy{
-    width: 8vw;
+    width: 4vw;
     padding-left: 3vw;
     padding-right: 3vw;
 }
 
 .euro_trophy{
-    width: 10vw;
+    width: 4vw;
     padding-left: 3vw;
     padding-right: 3vw;
 }
 .copa_trophy{
-    width: 7vw;
+    width: 4vw;
     padding-left: 3vw;
     padding-right: 3vw;
     padding-bottom: 3vw;

@@ -26,6 +26,7 @@ class internationalteam(models.Model):
     abb=models.CharField(max_length=30, null=True)
     description=models.TextField(max_length=5000, null=True)
     logo=models.ImageField(null=True, blank=True, default='default_logo.png', upload_to='int_logo/')
+    flag=models.ImageField(null=True, blank=True, default='flag_default.png', upload_to='int_flag/')
     official_site=models.CharField(max_length=200, null=True)
     id=models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     current_manager=models.CharField(max_length=50,null=True)
