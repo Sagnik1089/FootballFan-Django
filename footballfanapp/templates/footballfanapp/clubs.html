@@ -10,6 +10,7 @@
         <th>Abbreviation</th>
         <th>Country</th>
         <th>Established</th>
+        <th>Home Venue</th>
     </tr>
     {% for club in clubs %}
     <tr>
@@ -19,6 +20,7 @@
         <td>{{ club.abb }}</td>
         <td>{{ club.country }}</td>
         <td>{{ club.estd }}</td>
+        <td>{{ club.home_venue }}</td>
     </tr>
     {% endfor %}
 </table>
