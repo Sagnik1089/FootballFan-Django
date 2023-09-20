@@ -1,6 +1,7 @@
 from django.db import models
 import uuid
 
+
 class footballclub(models.Model):
     name=models.CharField(max_length=30)
     abb=models.CharField(max_length=30, null=True)
@@ -10,6 +11,7 @@ class footballclub(models.Model):
     estd=models.IntegerField(help_text='Year')
     country=models.CharField(max_length=30)
     league=models.CharField(max_length=30,null=True)
+    official_site=models.CharField(max_length=200, null=True)
     id=models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     def __str__(self):
