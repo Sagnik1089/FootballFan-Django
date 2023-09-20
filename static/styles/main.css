@@ -190,9 +190,6 @@
 /* Club page */
 .club_page {
     text-align: center;
-}
-
-.ClubHeading {
     color: #0F2C59;
 }
 
@@ -208,9 +205,22 @@
     text-align: justify;
 }
 
+.manager_section{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3vw;
+    align-items: center;
+}
+.manager_pic{
+    height: 15vw;
+    width: auto;
+    padding-right: 5vw;
+}
+
 .club_edit_button {
     display: flex;
     justify-content: space-around;
+    padding-top: 2vw;
 }
 
 /* End of Club Page */
