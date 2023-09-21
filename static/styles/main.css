@@ -197,7 +197,73 @@
     display: flex;
     justify-content: space-around;
 }
+.pagination{
+    display: flex;
+    justify-content: end;
+    margin-top: 2vw;
+    margin-right: 5vw;
+}
+.pagination a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.pagination a:hover{
+    color: #EADBC8;
+    background-color: #007bff;
+    cursor: pointer;
+}
 
+.pagination .current-page {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 3px;
+}
+.search_sort_filter{
+    display: flex;
+    justify-content: space-around;
+}
+.search_section { 
+    color: #0F2C59;
+    width: 20vw;
+    padding: 1vw;
+    display: inline-block;
+    background-color: #e8d0b5;
+    border-radius: 2vw;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.filter_section{
+    color: #0F2C59;
+    width: 20vw;
+    padding: 1vw;
+    display: inline-block;
+    background-color: #e8d0b5;
+    display: flex;
+    border-radius: 2vw;
+    text-align: center;
+}
+.search_field{
+    height: 2vw;
+    width: 100%;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+    border-radius: 0.4vw;
+    box-sizing: border-box;
+    padding: auto;
+}
+.search_btn{
+    color: white;
+    background-color: #0F2C59;
+    cursor: pointer;
+    border-radius: 0.3vw;
+}
 /* End of Clubs Page */
 
 

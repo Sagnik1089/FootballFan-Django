@@ -9,4 +9,4 @@ class FootballClubForm(ModelForm):
 class InternationalForm(ModelForm):
     class Meta:
         model = internationalteam
-        fields = ['name','logo','flag','official_site','abb','current_manager','manager_pic','wc_won','copa_won','euro_won','description']
+        fields = ['name','logo','flag','continent','official_site','abb','current_manager','manager_pic','wc_won','copa_won','euro_won','description']

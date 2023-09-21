@@ -6,11 +6,33 @@
 <h1 class="clubs_page_title">
     International Teams and Details
 </h1>
+<hr>
+<div class="search_sort_filter">
+    <div class="filter_section">
+        <form method="GET" action="{% url 'filter-int-teams' %}">
+            <label for="search">Search by Continent:</label>
+            <input class='search_field' type="text" id="search" name="q" placeholder="Enter Continent">
+            <input class='search_field' type="number" id="search" name="wc" placeholder="Minimum No of World Cup Won">
+            <button class="search_btn" type="submit">Look for it!</button>
+        </form>
+    </div>
+    <div class="search_section">
+        <form method="GET" action="{% url 'search-int-teams' %}">
+            <label for="search">Search by Nation:</label>
+            <input class='search_field' type="text" id="search" name="q" placeholder="Enter Nation to Search">
+            <button class="search_btn" type="submit">Look for it!</button>
+        </form>
+    </div>
+</div>
+<hr>
+
+{% if int_teams|length > 0 %}
 <table class="ClubTable">
     <tr class="header-row">
         <th>Insignia</th>
         <th>Nation</th>
         <th>Abbreviation</th>
+        <th>Continent</th>
         <th>FIFA World Cup Cabinet</th>
     </tr>
     {% for int_team in int_teams %}
@@ -19,6 +41,7 @@
         </td>
         <td><a href="{% url 'int_team' int_team.id %}">{{ int_team.name }}</a></td>
         <td>{{ int_team.abb }}</td>
+        <td>{{ int_team.continent }}</td>
         <td>
             {% if int_team.wc_won > 0 %}
                 <div class="cup_list">
@@ -31,7 +54,29 @@
     </tr>
     {% endfor %}
 </table>
-<div style=" display: flex; justify-content: center;">
+
+<div class="pagination">
+    {% if int_teams.has_previous %}
+        <a href="?page=1">First</a>
+        <a href="?page={{ int_teams.previous_page_number }}">Previous</a>
+    {% endif %}
+    <span class="current-page">{{ int_teams.number }}</span>
+    {% if int_teams.has_next %}
+        <a href="?page={{ int_teams.next_page_number }}">Next</a>
+        <a href="?page={{ int_teams.paginator.num_pages }}">Last</a>
+    {% endif %}
+</div>
+
+{% else %}
+<h2 class="clubs_page_title">Ooooops!!! No result Found"</h2>
+{% endif %}
+
+<div style=" display: flex; justify-content: space-around;">
+    {% if mode > 0 %}
+    <a href="{% url 'int_teams' %}" class="nav_button">
+        Back
+    </a>
+    {% endif %}
     <a href="{% url 'create-int-team' %}" class="nav_button">
         Add New International Team
     </a>
