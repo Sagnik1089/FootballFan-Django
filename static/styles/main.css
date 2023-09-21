@@ -224,6 +224,30 @@
     margin: 0 5px;
     border-radius: 3px;
 }
+.search_sort_filter{
+    display: flex;
+    justify-content: space-around;
+}
+.search_section{
+    color: #0F2C59;
+    width: 20vw;
+    padding: 10px;
+    display: inline-block;
+}
+.search_field{
+    height: 2vw;
+    width: 100%;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+    border-radius: 1vw;
+    box-sizing: border-box;
+}
+.search_btn{
+    color: white;
+    background-color: #0F2C59;
+    cursor: pointer;
+    border-radius: 0.3vw;
+}
 /* End of Clubs Page */
 
 

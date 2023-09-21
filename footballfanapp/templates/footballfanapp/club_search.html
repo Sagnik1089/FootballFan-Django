@@ -1,19 +1,11 @@
 {% extends 'main.html' %}
 {% block content %}
+
+
+{% if clubs|length > 0 %}
 <h1 class="clubs_page_title">
-    Clubs and Details
+    Search Results for "{{ query }}"
 </h1>
-
-<div class="search_sort_filter">
-    <div class="search_section">
-        <form method="GET" action="{% url 'search-clubs' %}">
-            <label for="search">Search by Club Name:</label>
-            <input class='search_field' type="text" id="search" name="q" placeholder="Enter Club Name to Search">
-            <button class="search_btn" type="submit">Look for it!</button>
-        </form>
-    </div>
-</div>
-
 <table class="ClubTable">
     <tr class="header-row">
         <th>Insignia</th>
@@ -48,7 +40,13 @@
     {% endif %}
 </div>
 
-<div style=" display: flex; justify-content: center;">
+{% else %}
+    <h2 class="clubs_page_title">Ooooops!!! There is no match for "{{query}}"</h2>
+{%endif%}
+<div style=" display: flex; justify-content: space-around;">
+    <a href="{% url 'clubs' %}" class="nav_button">
+        Back
+    </a>
     <a href="{% url 'create-club' %}" class="nav_button">
         Add New Club
     </a>

@@ -13,12 +13,9 @@ def home(request):
 def clubs(request):
     all_clubs=footballclub.objects.all()
     paginator=Paginator(all_clubs,4)
-
     page = request.GET.get('page')
     clubs = paginator.get_page(page)
     return render(request, 'footballfanapp/clubs.html', {'clubs':clubs})
-
-
 
 def club(request,pk):
     club=footballclub.objects.get(id=pk)
@@ -51,6 +48,14 @@ def deletefootballclub(request,pk):
         return redirect('clubs')
     context={'club': club}
     return render(request, 'footballfanapp/delete_club.html', context)
+
+def search_clubs(request):
+    query = request.GET.get('q', '')
+    all_clubs = footballclub.objects.filter(name__icontains=query)
+    paginator=Paginator(all_clubs,4)
+    page = request.GET.get('page')
+    clubs = paginator.get_page(page)
+    return render(request, 'footballfanapp/club_search.html', {'clubs': clubs, 'query': query})
 # End of Club Part
 
 # International Part
@@ -58,11 +63,9 @@ def deletefootballclub(request,pk):
 def int_teams(request):
     all_teams=internationalteam.objects.all()
     paginator=Paginator(all_teams,4)
-
     page = request.GET.get('page')
     intTeamsObjs = paginator.get_page(page)
     return render(request, 'footballfanapp/int_teams.html', {'int_teams':intTeamsObjs})
-
 
 def int_team(request,pk):
     int_team=internationalteam.objects.get(id=pk)
@@ -95,5 +98,13 @@ def deleteintteam(request,pk):
         return redirect('int_teams')
     context={'int_team': team}
     return render(request, 'footballfanapp/delete_int_team.html', context)
+
+def search_int_teams(request):
+    query = request.GET.get('q', '')
+    all_int_teams = internationalteam.objects.filter(name__icontains=query)
+    paginator=Paginator(all_int_teams,4)
+    page = request.GET.get('page')
+    int_teams = paginator.get_page(page)
+    return render(request, 'footballfanapp/int_team_search.html', {'int_teams': int_teams, 'query': query})
 
 # End of International Part
