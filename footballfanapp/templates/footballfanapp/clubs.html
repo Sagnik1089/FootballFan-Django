@@ -24,6 +24,19 @@
     </tr>
     {% endfor %}
 </table>
+
+<div class="pagination">
+    {% if clubs.has_previous %}
+        <a href="?page=1">First</a>
+        <a href="?page={{ clubs.previous_page_number }}">Previous</a>
+    {% endif %}
+    <span class="current-page">{{ clubs.number }}</span>
+    {% if clubs.has_next %}
+        <a href="?page={{ clubs.next_page_number }}">Next</a>
+        <a href="?page={{ clubs.paginator.num_pages }}">Last</a>
+    {% endif %}
+</div>
+
 <div style=" display: flex; justify-content: center;">
     <a href="{% url 'create-club' %}" class="nav_button">
         Add New Club

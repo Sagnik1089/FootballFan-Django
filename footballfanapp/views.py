@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import footballclub,internationalteam
 from .forms import FootballClubForm, InternationalForm
+from django.core.paginator import Paginator
 
 
 def home(request):
@@ -8,9 +9,16 @@ def home(request):
 
 
 # Club Part
+
 def clubs(request):
-    clubObjs=footballclub.objects.all()
-    return render(request, 'footballfanapp/clubs.html', {'clubs':clubObjs})
+    all_clubs=footballclub.objects.all()
+    paginator=Paginator(all_clubs,4)
+
+    page = request.GET.get('page')
+    clubs = paginator.get_page(page)
+    return render(request, 'footballfanapp/clubs.html', {'clubs':clubs})
+
+
 
 def club(request,pk):
     club=footballclub.objects.get(id=pk)
@@ -46,9 +54,16 @@ def deletefootballclub(request,pk):
 # End of Club Part
 
 # International Part
+
 def int_teams(request):
-    intTeamsObjs=internationalteam.objects.all()
+    all_teams=internationalteam.objects.all()
+    paginator=Paginator(all_teams,4)
+
+    page = request.GET.get('page')
+    intTeamsObjs = paginator.get_page(page)
     return render(request, 'footballfanapp/int_teams.html', {'int_teams':intTeamsObjs})
+
+
 def int_team(request,pk):
     int_team=internationalteam.objects.get(id=pk)
     return render(request, 'footballfanapp/int_team.html', {'int_team':int_team})
