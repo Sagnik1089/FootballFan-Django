@@ -3,6 +3,8 @@ from .models import footballclub,internationalteam
 from .forms import FootballClubForm, InternationalForm
 from django.core.paginator import Paginator
 
+crr_clubs=footballclub.objects.all()
+crr_int_teams=footballclub.objects.all()
 
 def home(request):
     return render(request, 'footballfanapp/home.html')
@@ -11,7 +13,9 @@ def home(request):
 # Club Part
 
 def clubs(request):
+    global crr_clubs
     all_clubs=footballclub.objects.all().order_by('name')
+    crr_clubs=all_clubs
     paginator=Paginator(all_clubs,4)
     page = request.GET.get('page')
     clubs = paginator.get_page(page)
@@ -51,8 +55,10 @@ def deletefootballclub(request,pk):
     return render(request, 'footballfanapp/delete_club.html', context)
 
 def search_clubs(request):
+    global crr_clubs
     query = request.GET.get('q', '')
-    all_clubs = footballclub.objects.filter(name__icontains=query)
+    all_clubs = crr_clubs.filter(name__icontains=query)
+    crr_clubs=all_clubs
     paginator=Paginator(all_clubs,4)
     page = request.GET.get('page')
     clubs = paginator.get_page(page)
@@ -60,10 +66,12 @@ def search_clubs(request):
     return render(request, 'footballfanapp/clubs.html', {'clubs': clubs, 'mode':mode})
 
 def filter_clubs(request):
+    global crr_clubs
     query_country = request.GET.get('q', '')
     query_ucl=request.GET.get('u','')
     if query_ucl=='':query_ucl=0        
-    all_clubs = footballclub.objects.filter(country__icontains=query_country, ucl_won__gte=query_ucl)
+    all_clubs = crr_clubs.filter(country__icontains=query_country, ucl_won__gte=query_ucl)
+    crr_clubs=all_clubs
     paginator=Paginator(all_clubs,4)
     page = request.GET.get('page')
     clubs = paginator.get_page(page)
@@ -75,7 +83,10 @@ def filter_clubs(request):
 # International Part
 
 def int_teams(request):
+    global crr_int_teams
     all_teams=internationalteam.objects.all().order_by('name')
+    crr_int_teams=all_teams
+    print(50*'*',type(all_teams),50*'*')
     paginator=Paginator(all_teams,4)
     page = request.GET.get('page')
     intTeamsObjs = paginator.get_page(page)
@@ -115,8 +126,10 @@ def deleteintteam(request,pk):
     return render(request, 'footballfanapp/delete_int_team.html', context)
 
 def search_int_teams(request):
+    global crr_int_teams
     query = request.GET.get('q', '')
-    all_int_teams = internationalteam.objects.filter(name__icontains=query)
+    all_int_teams = crr_int_teams.filter(name__icontains=query)
+    crr_int_teams=all_int_teams
     paginator=Paginator(all_int_teams,4)
     page = request.GET.get('page')
     int_teams = paginator.get_page(page)
@@ -124,10 +137,12 @@ def search_int_teams(request):
     return render(request, 'footballfanapp/int_teams.html', {'int_teams': int_teams,'mode':mode})
 
 def filter_int_teams(request):
+    global crr_int_teams
     query_continent = request.GET.get('q', '')
     query_wc=request.GET.get('wc', '')
     if query_wc=='':query_wc=0 
-    all_int_teams = internationalteam.objects.filter(continent__icontains=query_continent, wc_won__gte=query_wc)
+    all_int_teams = crr_int_teams.filter(continent__icontains=query_continent, wc_won__gte=query_wc)
+    crr_int_teams=all_int_teams
     paginator=Paginator(all_int_teams,4)
     page = request.GET.get('page')
     int_teams = paginator.get_page(page)
