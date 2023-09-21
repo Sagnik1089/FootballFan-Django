@@ -22,6 +22,7 @@
     </div>
 </div>
 <hr>
+{% if clubs|length > 0 %}
 <table class="ClubTable">
     <tr class="header-row">
         <th>Insignia</th>
@@ -56,7 +57,16 @@
     {% endif %}
 </div>
 
-<div style=" display: flex; justify-content: center;">
+{% else %}
+    <h2 class="clubs_page_title">Ooooops!!! No result Found"</h2>
+{%endif%}
+
+<div style=" display: flex; justify-content: space-around;">
+    {% if mode > 0 %}
+    <a href="{% url 'clubs' %}" class="nav_button">
+        Back
+    </a>
+    {% endif %}
     <a href="{% url 'create-club' %}" class="nav_button">
         Add New Club
     </a>

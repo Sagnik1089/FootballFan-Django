@@ -26,7 +26,7 @@
 </div>
 <hr>
 
-
+{% if int_teams|length > 0 %}
 <table class="ClubTable">
     <tr class="header-row">
         <th>Insignia</th>
@@ -67,7 +67,16 @@
     {% endif %}
 </div>
 
-<div style=" display: flex; justify-content: center;">
+{% else %}
+<h2 class="clubs_page_title">Ooooops!!! No result Found"</h2>
+{% endif %}
+
+<div style=" display: flex; justify-content: space-around;">
+    {% if mode > 0 %}
+    <a href="{% url 'int_teams' %}" class="nav_button">
+        Back
+    </a>
+    {% endif %}
     <a href="{% url 'create-int-team' %}" class="nav_button">
         Add New International Team
     </a>
