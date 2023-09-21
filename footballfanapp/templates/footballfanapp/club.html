@@ -1,7 +1,10 @@
 {%extends 'main.html'%}
+{% load static %}
 {%block content%}
+{% load custom_filters %}
+
 <div class="club_page">
-    <h1>{{club.name}} ({{club.abb}})</h1>
+    <h1><u>{{club.name}} ({{club.abb}})</u></h1>
     <div>
         <img class="ClubLogo" src="{{club.logo.url}}" alt="Club Logo">
     </div>
@@ -9,12 +12,26 @@
     <hr>
     <h2>League: {{club.league}} ({{club.country}})</h2>
     <h2>Established: {{club.estd}}</h2>
-    <h2>Home Venue: {{club.home_venue}}</h2>
+    <hr>
+    <h1><u>Home Venue</u></h1>
+    <div class="home">
+        <h2>{{club.home_venue}}</h2>
+        <img class="club_home" src="{{club.venue_pic.url}}" alt="Club Home">
+    </div>
     <hr>
     <div class="club_details">
         <p>{{club.description}}</p>
     </div>
     <hr>
+    {%if club.ucl_won > 0%}
+    <h1><u>UCL Trophy Cabinet</u></h1>
+    <div class="trophy_cabinet">
+        {% for i in club.ucl_won|custom_range %}
+        <img class="trophy" src="{% static 'images/ucl_trophy.png' %}">
+        {% endfor %}
+    </div>
+    <hr>
+    {% endif %}
     <h1><u>Current Manager</u></h1>
 
     <div class="manager_section">

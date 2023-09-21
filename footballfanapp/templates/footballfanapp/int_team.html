@@ -1,0 +1,59 @@
+{%extends 'main.html'%}
+{%block content%}
+{% load custom_filters %}
+{% load static %}
+
+<div class="club_page">
+    <h1><u>{{int_team.name}} ({{int_team.abb}})</u></h1>
+    <div class="flag_logo">
+        <img class="ClubLogo" src="{{int_team.logo.url}}" alt="Club Logo">
+        <img class="flag" src="{{int_team.flag.url}}" alt="Club Logo">
+    </div>
+    <hr>
+    <div class="club_details">
+        <p>{{int_team.description}}</p>
+    </div>
+    <hr>
+    {% if int_team.wc_won|add:int_team.euro_won|add:int_team.copa_won > 0 %}
+    <h1><u>Trophy Cabinet</u></h1>
+    {% if int_team.wc_won > 0 %}
+    <h2><u>FIFA World Cup</u></h2>
+    {% for i in int_team.wc_won|custom_range %}
+    <img class="wc_trophy" src="{% static 'images/wc_trophy.png' %}">
+    {% endfor %}
+    {%endif%}
+    {% if int_team.euro_won > 0 %}
+    <h2><u>UEFA Euro</u></h2>
+    {% for i in int_team.euro_won|custom_range %}
+    <img class="euro_trophy" src="{% static 'images/euro_trophy.png' %}">
+    {% endfor %}
+    {%endif%}
+    {% if int_team.copa_won > 0 %}
+    <h2><u>Copa America</u></h2>
+    {% for i in int_team.copa_won|custom_range %}
+    <img class="copa_trophy" src="{% static 'images/copa_trophy.png' %}">
+    {% endfor %}
+    {%endif%}
+    <hr>
+    {% endif %}
+    <h1><u>Current Manager</u></h1>
+    <div class="manager_section">
+        <div class="manager_details">
+            <img class="manager_pic" src="{{int_team.manager_pic.url}}" alt="Team Manager">
+            <h2>{{int_team.current_manager}}</h2>
+        </div>
+    </div>
+    <hr>
+    <div class="club_edit_button">
+        <a href="{{int_team.official_site}}" class="nav_button">
+            Visit Official Site
+        </a>
+        <a href="{%url 'update-int-team' int_team.id%}" class="nav_button">
+            Edit {{int_team.name}}'s Details
+        </a>
+        <a href="{% url 'delete-int-team' int_team.id %}" class="nav_button">
+            Delete {{int_team.name}}'s Details
+        </a>
+    </div>
+</div>
+{%endblock content%}
