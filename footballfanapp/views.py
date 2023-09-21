@@ -78,13 +78,25 @@ def filter_clubs(request):
     mode=1
     return render(request, 'footballfanapp/clubs.html', {'clubs': clubs,'mode':mode})
 
+def sort_clubs(request):
+    global crr_clubs
+    sort_by=request.GET.get('sort')
+    if sort_by in ['name','country','ucl_won','estd']:
+        all_clubs=crr_clubs.order_by(sort_by)
+        crr_clubs=all_clubs
+    paginator=Paginator(crr_clubs,4)
+    page = request.GET.get('page')
+    clubs = paginator.get_page(page)
+    mode=1
+    return render(request, 'footballfanapp/clubs.html', {'clubs': clubs,'mode':mode})
+
 # End of Club Part
 
 # International Part
 
 def int_teams(request):
     global crr_int_teams
-    all_teams=internationalteam.objects.all().order_by('name')
+    all_teams=internationalteam.objects.all()
     crr_int_teams=all_teams
     print(50*'*',type(all_teams),50*'*')
     paginator=Paginator(all_teams,4)
@@ -144,6 +156,18 @@ def filter_int_teams(request):
     all_int_teams = crr_int_teams.filter(continent__icontains=query_continent, wc_won__gte=query_wc)
     crr_int_teams=all_int_teams
     paginator=Paginator(all_int_teams,4)
+    page = request.GET.get('page')
+    int_teams = paginator.get_page(page)
+    mode=1
+    return render(request, 'footballfanapp/int_teams.html', {'int_teams': int_teams,'mode':mode})
+
+def sort_int_teams(request):
+    global crr_int_teams
+    sort_by=request.GET.get('sort')
+    if sort_by in ['name','continent','wc_won']:
+        all_int_teams=crr_int_teams.order_by(sort_by)
+        crr_int_teams=all_int_teams
+    paginator=Paginator(crr_int_teams,4)
     page = request.GET.get('page')
     int_teams = paginator.get_page(page)
     mode=1
