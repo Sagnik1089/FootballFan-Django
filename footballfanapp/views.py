@@ -15,7 +15,8 @@ def clubs(request):
     paginator=Paginator(all_clubs,4)
     page = request.GET.get('page')
     clubs = paginator.get_page(page)
-    return render(request, 'footballfanapp/clubs.html', {'clubs':clubs})
+    mode=0
+    return render(request, 'footballfanapp/clubs.html', {'clubs':clubs,'mode':mode})
 
 def club(request,pk):
     club=footballclub.objects.get(id=pk)
@@ -55,7 +56,8 @@ def search_clubs(request):
     paginator=Paginator(all_clubs,4)
     page = request.GET.get('page')
     clubs = paginator.get_page(page)
-    return render(request, 'footballfanapp/club_search.html', {'clubs': clubs, 'query': query})
+    mode=1
+    return render(request, 'footballfanapp/clubs.html', {'clubs': clubs, 'mode':mode})
 
 def filter_clubs(request):
     query_country = request.GET.get('q', '')
@@ -65,7 +67,8 @@ def filter_clubs(request):
     paginator=Paginator(all_clubs,4)
     page = request.GET.get('page')
     clubs = paginator.get_page(page)
-    return render(request, 'footballfanapp/club_search.html', {'clubs': clubs})
+    mode=1
+    return render(request, 'footballfanapp/clubs.html', {'clubs': clubs,'mode':mode})
 
 # End of Club Part
 
@@ -76,7 +79,8 @@ def int_teams(request):
     paginator=Paginator(all_teams,4)
     page = request.GET.get('page')
     intTeamsObjs = paginator.get_page(page)
-    return render(request, 'footballfanapp/int_teams.html', {'int_teams':intTeamsObjs})
+    mode=0
+    return render(request, 'footballfanapp/int_teams.html', {'int_teams':intTeamsObjs,'mode':mode})
 
 def int_team(request,pk):
     int_team=internationalteam.objects.get(id=pk)
@@ -116,7 +120,8 @@ def search_int_teams(request):
     paginator=Paginator(all_int_teams,4)
     page = request.GET.get('page')
     int_teams = paginator.get_page(page)
-    return render(request, 'footballfanapp/int_team_search.html', {'int_teams': int_teams, 'query': query})
+    mode=1
+    return render(request, 'footballfanapp/int_teams.html', {'int_teams': int_teams,'mode':mode})
 
 def filter_int_teams(request):
     query_continent = request.GET.get('q', '')
@@ -126,6 +131,7 @@ def filter_int_teams(request):
     paginator=Paginator(all_int_teams,4)
     page = request.GET.get('page')
     int_teams = paginator.get_page(page)
-    return render(request, 'footballfanapp/int_team_search.html', {'int_teams': int_teams})
+    mode=1
+    return render(request, 'footballfanapp/int_teams.html', {'int_teams': int_teams,'mode':mode})
 
 # End of International Part
