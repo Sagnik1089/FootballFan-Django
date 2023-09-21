@@ -23,6 +23,14 @@
             <button class="search_btn" type="submit">Look for it!</button>
         </form>
     </div>
+    <div class="sort_section">
+        <form method="GET" action="{% url 'sort-int-teams' %}">
+            <label for="sort">Sort By:</label>
+            <button class="sort_btn" type="submit" name="sort" value="name">Name</button>
+            <button class="sort_btn" type="submit" name="sort" value="continent">Continent</button>
+            <button class="sort_btn" type="submit" name="sort" value="wc_won">World Cup Won</button>
+        </form>
+    </div>
 </div>
 <hr>
 

@@ -264,6 +264,26 @@
     cursor: pointer;
     border-radius: 0.3vw;
 }
+.sort_section{
+    color: #0F2C59;
+    width: 20vw;
+    padding: 1vw;
+    display: inline-block;
+    background-color: #e8d0b5;
+    border-radius: 2vw;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.sort_btn{
+    color: white;
+    background-color: #0F2C59;
+    cursor: pointer;
+    border-radius: 0.3vw;
+    width: 15vw;
+    font-size: 1.3vw;
+    margin: 0.2vw;
+}
 /* End of Clubs Page */
 
 
