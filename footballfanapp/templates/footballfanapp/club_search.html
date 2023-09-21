@@ -1,11 +1,29 @@
 {% extends 'main.html' %}
 {% block content %}
-
-
-{% if clubs|length > 0 %}
 <h1 class="clubs_page_title">
-    Search Results for "{{ query }}"
+    Clubs and Details
 </h1>
+<hr>
+<div class="search_sort_filter">
+    <div class="filter_section">
+        <form method="GET" action="{% url 'filter-clubs' %}">
+            <label for="search">Filter:</label>
+            <input class='search_field' type="text" id="search" name="q" placeholder="Country">
+            <input class='search_field' type="number" id="search" name="u" placeholder="Minimum No of UCL Won">
+            <button class="search_btn" type="submit">Filter</button>
+        </form>
+    </div>
+    <div class="search_section">
+        <form method="GET" action="{% url 'search-clubs' %}">
+            <label for="search">Search by Club Name:</label>
+            <input class='search_field' type="text" id="search" name="q" placeholder="Club Name">
+            <button class="search_btn" type="submit">Look for it!</button>
+        </form>
+    </div>
+</div>
+<hr>
+{% if clubs|length > 0 %}
+
 <table class="ClubTable">
     <tr class="header-row">
         <th>Insignia</th>

@@ -35,6 +35,7 @@ class internationalteam(models.Model):
     wc_won=models.IntegerField(null=True, default=0)
     euro_won=models.IntegerField(null=True, default=0)
     copa_won=models.IntegerField(null=True,default=0)
+    continent=models.CharField(max_length=30,null=True)
 
 
     def __str__(self):

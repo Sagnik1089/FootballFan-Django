@@ -56,6 +56,17 @@ def search_clubs(request):
     page = request.GET.get('page')
     clubs = paginator.get_page(page)
     return render(request, 'footballfanapp/club_search.html', {'clubs': clubs, 'query': query})
+
+def filter_clubs(request):
+    query_country = request.GET.get('q', '')
+    query_ucl=request.GET.get('u','')
+    if query_ucl=='':query_ucl=0        
+    all_clubs = footballclub.objects.filter(country__icontains=query_country, ucl_won__gte=query_ucl)
+    paginator=Paginator(all_clubs,4)
+    page = request.GET.get('page')
+    clubs = paginator.get_page(page)
+    return render(request, 'footballfanapp/club_search.html', {'clubs': clubs})
+
 # End of Club Part
 
 # International Part
@@ -106,5 +117,15 @@ def search_int_teams(request):
     page = request.GET.get('page')
     int_teams = paginator.get_page(page)
     return render(request, 'footballfanapp/int_team_search.html', {'int_teams': int_teams, 'query': query})
+
+def filter_int_teams(request):
+    query_continent = request.GET.get('q', '')
+    query_wc=request.GET.get('wc', '')
+    if query_wc=='':query_wc=0 
+    all_int_teams = internationalteam.objects.filter(continent__icontains=query_continent, wc_won__gte=query_wc)
+    paginator=Paginator(all_int_teams,4)
+    page = request.GET.get('page')
+    int_teams = paginator.get_page(page)
+    return render(request, 'footballfanapp/int_team_search.html', {'int_teams': int_teams})
 
 # End of International Part

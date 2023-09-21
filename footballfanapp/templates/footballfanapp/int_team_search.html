@@ -2,11 +2,29 @@
 {% block content %}
 {% load custom_filters %}
 {% load static %}
-
-{% if int_teams|length > 0 %}
 <h1 class="clubs_page_title">
-    Search Results for "{{ query }}"
+    International Teams and Details
 </h1>
+<hr>
+<div class="search_sort_filter">
+    <div class="filter_section">
+        <form method="GET" action="{% url 'filter-int-teams' %}">
+            <label for="search">Search by Continent:</label>
+            <input class='search_field' type="text" id="search" name="q" placeholder="Enter Continent">
+            <input class='search_field' type="number" id="search" name="wc" placeholder="Minimum No of World Cup Won">
+            <button class="search_btn" type="submit">Look for it!</button>
+        </form>
+    </div>
+    <div class="search_section">
+        <form method="GET" action="{% url 'search-int-teams' %}">
+            <label for="search">Search by Nation:</label>
+            <input class='search_field' type="text" id="search" name="q" placeholder="Enter Nation to Search">
+            <button class="search_btn" type="submit">Look for it!</button>
+        </form>
+    </div>
+</div>
+<hr>
+{% if int_teams|length > 0 %}
 <table class="ClubTable">
     <tr class="header-row">
         <th>Insignia</th>
