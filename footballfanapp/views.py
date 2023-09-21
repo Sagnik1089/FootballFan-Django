@@ -11,7 +11,7 @@ def home(request):
 # Club Part
 
 def clubs(request):
-    all_clubs=footballclub.objects.all()
+    all_clubs=footballclub.objects.all().order_by('name')
     paginator=Paginator(all_clubs,4)
     page = request.GET.get('page')
     clubs = paginator.get_page(page)
@@ -75,7 +75,7 @@ def filter_clubs(request):
 # International Part
 
 def int_teams(request):
-    all_teams=internationalteam.objects.all()
+    all_teams=internationalteam.objects.all().order_by('name')
     paginator=Paginator(all_teams,4)
     page = request.GET.get('page')
     intTeamsObjs = paginator.get_page(page)
